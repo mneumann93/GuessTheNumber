@@ -6,9 +6,9 @@ string userInput = Console.ReadLine();
 int userNumber = 0;
 int counter = 0;
 
-while (!int.TryParse(userInput, out userNumber))
+while (!int.TryParse(userInput, out userNumber) || (userNumber <= 0) || (userNumber > 100))
 {
-    Console.WriteLine("This is not a whole number! Please try again:");
+    Console.WriteLine("Your input was invalid. Please enter a whole number between 1 and 100:");
     userInput = Console.ReadLine();
 }
 
@@ -24,9 +24,9 @@ while (number != userNumber)
     }
     counter++;
     userInput = Console.ReadLine();
-    while (!int.TryParse(userInput, out userNumber))
+    while (!int.TryParse(userInput, out userNumber) || (userNumber <= 0) || (userNumber > 100))
     {
-        Console.WriteLine("This is not a whole number! Please try again:");
+        Console.WriteLine("Your input was invalid. Please enter a whole number between 1 and 100:");
         userInput = Console.ReadLine();
     }
 }
